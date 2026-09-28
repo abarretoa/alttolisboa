@@ -7,7 +7,7 @@
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--col-gap);
   align-items: start;
-  padding: var(--chapter-normal) var(--gutter);
+  padding: clamp(3.25rem, 5.5vw, 5.25rem) var(--gutter); /* a little under --chapter-normal: the card sits tighter */
   /* the lamp: one soft pool of warm light falling on the prices */
   background:
     radial-gradient(52% 64% at 74% 38%, rgb(201 163 107 / 0.075), rgb(201 163 107 / 0) 72%),
@@ -45,7 +45,7 @@
 .menu {
   grid-column: 6 / -1;
   display: grid;
-  gap: clamp(var(--s-8), 7vw, var(--s-10));
+  gap: clamp(var(--s-7), 4vw, 3.75rem);
 }
 
 .menu-period {

@@ -13,7 +13,7 @@
    The empty ground right of the tacos is the spread's one deliberate pause. */
 
 .atmosphere {
-  --atmo-gap: clamp(var(--s-8), 7.5vw, var(--s-10)); /* 64 → 128px between moments */
+  --atmo-gap: clamp(var(--s-7), 4.5vw, var(--s-8)); /* 48 → 64px: the tacos close the spread, not a new moment */
 
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));

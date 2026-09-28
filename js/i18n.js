@@ -7,8 +7,14 @@
 //   data-i18n-attr="attr:key;…" → attributes (alt, aria-label, meta content)
 //
 // Facts are never translated: prices, hours, the address, the phone number,
-// the rating and review count, and the reviews themselves (kept verbatim in
-// their original language in both modes — only their "in Spanish" labels change).
+// the rating and review count.
+//
+// Reviews follow the page language: verbatim when the original is in it,
+// otherwise a faithful translation labelled "Traduzido do… / Translated from…".
+// The originals, as read on Google on 24 Sep 2026:
+//   André P. (pt) “O sushi é delicioso, com um menu variado e com um atendimento excelentemente atencioso.”
+//   Laura M. (es) “El servicio es tranquilo y el ambiente muy relajado e intimo silencioso y agradable.”
+//   Xanyar K. (en) “Service was quick and friendly. Restaurant is huge. Menu has a wide selection.”
 (() => {
   const STORAGE_KEY = "altto-language";
   const DEFAULT = "pt";
@@ -64,8 +70,14 @@
       "rating.five": "5 de 5 estrelas",
       "rating.four": "4 de 5 estrelas",
       "review.srcPt": "Google Reviews",
-      "review.srcEs": "Google Reviews · em espanhol",
-      "review.srcEn": "Google Reviews · em inglês",
+      "review.srcEs": "Google Reviews · Traduzido do espanhol",
+      "review.srcEn": "Google Reviews · Traduzido do inglês",
+      "review.pt.lang": "pt-PT",
+      "review.pt.text": "“O sushi é delicioso, com um menu variado e com um atendimento excelentemente&nbsp;atencioso.”",
+      "review.es.lang": "pt-PT",
+      "review.es.text": "“O serviço é tranquilo e o ambiente muito descontraído, íntimo, silencioso e&nbsp;agradável.”",
+      "review.en.lang": "pt-PT",
+      "review.en.text": "“O serviço foi rápido e simpático. O restaurante é enorme. O menu tem uma grande&nbsp;variedade.”",
 
       "visit.heading": "Localização e contactos",
       "visit.reserve": "Reservas por telefone",
@@ -128,9 +140,15 @@
       "rating.cta": "View on Google",
       "rating.five": "5 out of 5 stars",
       "rating.four": "4 out of 5 stars",
-      "review.srcPt": "Google Reviews · in Portuguese",
-      "review.srcEs": "Google Reviews · in Spanish",
+      "review.srcPt": "Google Reviews · Translated from Portuguese",
+      "review.srcEs": "Google Reviews · Translated from Spanish",
       "review.srcEn": "Google Reviews",
+      "review.pt.lang": "en",
+      "review.pt.text": "“The sushi is delicious, with a varied menu and exceptionally attentive&nbsp;service.”",
+      "review.es.lang": "en",
+      "review.es.text": "“The service is calm and the atmosphere very relaxed, intimate, quiet and&nbsp;pleasant.”",
+      "review.en.lang": "en",
+      "review.en.text": "“Service was quick and friendly. Restaurant is huge. Menu has a wide&nbsp;selection.”",
 
       "visit.heading": "Location and contacts",
       "visit.reserve": "Reservations by phone",

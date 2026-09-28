@@ -141,9 +141,9 @@
   top: var(--plate-top);
   right: var(--gutter);                             /* the rail's right edge */
   bottom: var(--plate-bottom);
-  /* a wide portrait (at most 0.78 of its height): enough width to answer the phrase,
+  /* a wide portrait (at most 0.82 of its height): enough width to answer the phrase,
      still taller than wide; its feathered left edge meets the end of "vibe." */
-  width: min(33.5vw, calc((100svh - var(--plate-top) - var(--plate-bottom)) * 0.78));
+  width: min(35.2vw, calc((100svh - var(--plate-top) - var(--plate-bottom)) * 0.82));
 }
 
 /* the frame is less tall than the photograph: the lamp above the glass is what goes;
