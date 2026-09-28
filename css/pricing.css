@@ -1,0 +1,160 @@
+/* Pricing — typeset like the card on the table, not a plan comparison.
+   Grouped the way a guest thinks: which meal, then which day.
+   Prices are the biggest type in the chapter and share one right edge. */
+
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  align-items: start;
+  padding: var(--chapter-normal) var(--gutter);
+  /* the lamp: one soft pool of warm light falling on the prices */
+  background:
+    radial-gradient(52% 64% at 74% 38%, rgb(201 163 107 / 0.075), rgb(201 163 107 / 0) 72%),
+    var(--surface);
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  scroll-margin-top: 0;
+}
+
+.pricing-intro {
+  grid-column: 1 / span 4;
+  display: grid;
+  gap: var(--s-4);
+  margin-top: -0.12em;       /* cap line of "Preços" meets the "Almoço" line */
+}
+
+.pricing-title {
+  font-family: var(--font-display);
+  font-size: var(--display-lg);
+  font-weight: 340;
+  font-variation-settings: "opsz" 144;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.pricing-kind {
+  font-size: var(--label);
+  font-weight: 500;
+  font-variation-settings: "wdth" 112;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.menu {
+  grid-column: 6 / -1;
+  display: grid;
+  gap: clamp(var(--s-8), 7vw, var(--s-10));
+}
+
+.menu-period {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-5);
+  padding-bottom: var(--s-4);
+  font-family: var(--font-display);
+  font-size: var(--heading-md);
+  font-weight: 400;
+  font-variation-settings: "opsz" 72;
+  line-height: 1.1;
+}
+
+.menu-hours {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: var(--label);
+  font-weight: 500;
+  font-variation-settings: "wdth" 112;
+  letter-spacing: var(--tracking-label);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.menu-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  column-gap: var(--s-6);
+  padding: clamp(var(--s-5), 2.4vw, var(--s-7)) 0 clamp(var(--s-4), 1.6vw, var(--s-5));
+  border-top: 1px solid var(--hairline-strong);
+}
+
+.menu-row dt {
+  display: grid;
+  gap: var(--s-2);
+  padding-bottom: 0.9em;
+  font-size: var(--body-lg);
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+
+.menu-perk {
+  font-size: var(--label);
+  font-weight: 500;
+  font-variation-settings: "wdth" 112;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: var(--display-lg);
+  font-weight: 330;
+  font-variation-settings: "opsz" 144;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-variant-numeric: lining-nums tabular-nums;
+  white-space: nowrap;
+}
+
+.price .cur {
+  display: inline-block;
+  margin-right: 0.08em;
+  font-size: 0.42em;
+  vertical-align: 0.95em;
+  letter-spacing: 0;
+  color: var(--accent);
+}
+
+@media (max-width: 1080px) {
+  .pricing-intro {
+    grid-column: 1 / span 3;
+  }
+
+  .menu {
+    grid-column: 5 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .pricing {
+    row-gap: var(--s-8);
+    padding-block: var(--s-9);
+  }
+
+  .pricing-intro {
+    grid-column: 1 / -1;
+    position: static;
+  }
+
+  .menu {
+    grid-column: 1 / -1;
+    gap: var(--s-8);
+  }
+
+  .menu-row {
+    column-gap: var(--s-4);
+  }
+
+  .menu-row dt {
+    font-size: var(--body);
+  }
+
+  .price {
+    font-size: clamp(2.6rem, 12vw, 3.4rem);
+  }
+
+}

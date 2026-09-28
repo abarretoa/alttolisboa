@@ -1,0 +1,14 @@
+- generic [ref=f2e2]:
+  - separator [ref=f2e3]
+  - iframe [ref=f2e8]:
+    - generic [ref=f3e2]:
+      - generic [ref=f3e3]:
+        - checkbox "I'm not a robot" [ref=f3e7]
+        - generic [aria-hidden] [ref=f3e11]: I'm not a robot
+      - generic [ref=f3e12]: reCAPTCHA
+  - separator [ref=f2e9]
+  - generic [ref=f2e10]:
+    - text: About this page Our systems have detected unusual traffic from your computer network. This page checks to see if it's really you sending the requests, and not a robot.
+    - link "Why did this happen?" [ref=f2e11] [cursor=pointer]:
+      - /url: "#"
+    - generic [ref=f2e12]: "IP address: 2001:8a0:6a05:6b00:ec62:9bde:3fda:d137Time: 2026-09-24T13:49:56ZURL: https://www.google.com/search?sca_esv=e50534bbba227543&sxsrf=APpeQnvjt4iotiO04lFjvoUHF014_egr8Q:1789471323697&kgmid=/g/11njymfhm7&q=ALTTO+SUSHI+LISBOA&shem=dlvs1,epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/uni/m1/1&kgs=f33818be294911d7&utm_source=dlvs1,epsd1,ltae,rimspwouoe,sh/x/loc/uni/m1/1&sei=gyq1arLqNp6B9u8P5vyssQc"

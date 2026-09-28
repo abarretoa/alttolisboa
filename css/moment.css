@@ -1,0 +1,161 @@
+/* Sushi / Drinks / boa vibe — a magazine spread with no explanatory copy.
+   Three voices at three scales: a serif noun, an expanded grotesque in caps,
+   an italic. They land together on one cue, like a room turning to look. */
+
+.moment {
+  position: relative;
+  padding: var(--chapter-tight) var(--gutter) var(--chapter-normal);
+  overflow: clip;
+}
+
+.moment-words {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  line-height: 0.8;
+  pointer-events: none;
+}
+
+.w {
+  display: block;
+  white-space: nowrap;
+}
+
+.w-sushi {
+  grid-column: 1 / -1;
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 21vw, 22rem);
+  font-weight: 330;
+  font-variation-settings: "opsz" 144;
+  letter-spacing: -0.045em;
+  margin-left: -0.05em;
+}
+
+.w-drinks {
+  grid-column: 5 / -1;
+  justify-self: end;
+  margin-top: clamp(var(--s-4), 2vw, var(--s-6));
+  font-family: var(--font-body);
+  font-size: clamp(2.6rem, 7.6vw, 8rem);
+  font-weight: 300;
+  font-variation-settings: "wdth" 125;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.w-vibe {
+  grid-column: 2 / -1;
+  margin-top: clamp(var(--s-5), 3vw, var(--s-7));
+  font-family: var(--font-display);
+  font-size: clamp(4.6rem, 15vw, 15.5rem);
+  font-weight: 300;
+  font-variation-settings: "opsz" 144;
+  letter-spacing: -0.04em;
+}
+
+.w-vibe em {
+  color: var(--text-primary);
+}
+
+/* the bar stands behind the words: a tall 3:4 cut of the martini photograph —
+   the whole glass with the lit shelves above it and the counter below. DRINKS
+   runs across the middle of the stem, never across the red bowl. Size and
+   position are in vw like the words, and stop growing where the words stop (~1680px). */
+.moment-plate {
+  --fade-l: 16%;
+  --fade-r: 12%;
+  --fade-t: 12%;
+  --fade-b: 10%;   /* the foot of the glass stays on the counter */
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: calc(var(--gutter) + 3vw);
+  width: min(28vw, 29.5rem);
+  aspect-ratio: 3 / 4;
+}
+
+.moment-plate img {
+  object-position: 60% 50%; /* glass centred, the lit bottle shelves kept above it */
+}
+
+/* ---------- one downbeat ---------- */
+
+.js .moment .w,
+.js .moment-plate {
+  transition: opacity var(--dur-reveal) var(--ease-out), transform 1100ms var(--ease-out);
+}
+
+.js .moment:not(.is-in) .w {
+  opacity: 0;
+}
+
+.js .moment:not(.is-in) .w-sushi {
+  transform: translateX(-0.12em);
+}
+
+.js .moment:not(.is-in) .w-drinks {
+  transform: translateX(0.4em);
+}
+
+.js .moment:not(.is-in) .w-vibe {
+  transform: translateY(0.18em);
+}
+
+.js .moment:not(.is-in) .moment-plate {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+/* phones: the plate joins the flow between SUSHI and DRINKS, so the word always
+   crosses the lower stem whatever the width (DRINKS is pulled up by a share of
+   the plate's own height, which is a share of the viewport width) */
+@media (max-width: 760px) {
+  .moment {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: var(--s-7);
+  }
+
+  .moment-words {
+    display: contents;
+  }
+
+  .w {
+    position: relative;
+    z-index: 2;
+  }
+
+  .w-sushi {
+    grid-row: 1;
+    font-size: 25vw;
+  }
+
+  .moment-plate {
+    position: relative;
+    grid-row: 2;
+    top: auto;
+    right: auto;
+    justify-self: end;
+    width: 78vw;
+    margin: calc(var(--s-4) * -1) calc(var(--gutter) * -1) 0 0;
+  }
+
+  .w-drinks {
+    grid-row: 3;
+    grid-column: 1 / -1;
+    align-self: start;   /* its row must not stretch: boa vibe follows the word, not a void */
+    margin-top: -33vw;
+    font-size: 11.4vw;
+  }
+
+  .w-vibe {
+    grid-row: 4;
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-top: -10vw;   /* rises onto the plate's faded counter, just under DRINKS */
+    font-size: 19vw;
+  }
+}

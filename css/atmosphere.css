@@ -1,0 +1,150 @@
+/* Atmosphere — one editorial split on the page's 12-column grid; every edge
+   is shared with something:
+
+     cols 1–8   label + heading, sharing the platter's left edge, 48px above it
+     cols 1–8   PLATTER 4:3 — the dominant frame: the food identity
+     cols 9–12  SALMON      — the dining moment; its top and bottom are the
+                              platter's top and bottom (a tall portrait cut to that height)
+     cols 3–8   TACOS  4:3  — the continuation, stepped in two columns; its right
+                              edge is the platter's right edge
+     cols 9–12  @altto.lisboa — closes the spread on the grid's right edge, on
+                              the tacos' bottom line
+
+   The empty ground right of the tacos is the spread's one deliberate pause. */
+
+.atmosphere {
+  --atmo-gap: clamp(var(--s-8), 7.5vw, var(--s-10)); /* 64 → 128px between moments */
+
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--col-gap);
+  row-gap: var(--atmo-gap);
+  padding: var(--chapter-quiet) var(--gutter);
+}
+
+/* ---------- intro ---------- */
+
+.atmosphere-head {
+  grid-column: 1 / 9;
+  grid-row: 1;
+  display: grid;
+  gap: var(--s-5);
+  margin-bottom: calc(var(--s-7) - var(--atmo-gap)); /* the heading belongs to the photograph, not the gap */
+}
+
+/* the one kicker on the page, asked for by name in the brief: quiet, brass, label type */
+.atmosphere-label {
+  font-size: var(--label);
+  font-weight: 500;
+  font-variation-settings: "wdth" 112;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.atmosphere-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5.6vw, 5.625rem); /* ≈ 80px at 1440, capped at 90px */
+  font-weight: 330;
+  font-variation-settings: "opsz" 144;
+  line-height: var(--leading-display);
+  letter-spacing: -0.03em;
+}
+
+/* ---------- frames ---------- */
+
+.shot {
+  position: relative;
+  margin: 0;
+}
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shot--platter {
+  grid-column: 1 / 9;
+  grid-row: 2;
+  aspect-ratio: 4 / 3;
+}
+
+.shot--platter img {
+  object-position: 50% 50%; /* native 4:3 — the whole board, gold leaf and chopstick rest */
+}
+
+/* no ratio of its own: the row (the platter) sets its height */
+.shot--salmon {
+  grid-column: 9 / -1;
+  grid-row: 2;
+  align-self: stretch;
+}
+
+/* keep the lifted piece and the hand; the plate's left rim is what gives way */
+.shot--salmon img {
+  object-position: 96% 50%;
+}
+
+.shot--tacos {
+  grid-column: 3 / 9;
+  grid-row: 3;
+  aspect-ratio: 4 / 3;
+}
+
+.shot--tacos img {
+  object-position: 50% 42%; /* both hands stay in: the one lifting, the one holding the slate */
+}
+
+.atmosphere-more {
+  grid-column: 9 / -1;
+  grid-row: 3;
+  align-self: end;
+  justify-self: end;
+}
+
+/* ---------- phones: a vertical sequence of three widths ---------- */
+
+@media (max-width: 760px) {
+  .atmosphere {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--s-10) var(--gutter);
+  }
+
+  .atmosphere-head {
+    gap: var(--s-4);
+    margin: 0 0 var(--s-7);
+  }
+
+  /* the platter is the only full-bleed frame */
+  .shot--platter {
+    width: 100vw;
+    margin-left: calc(var(--gutter) * -1);
+    aspect-ratio: 6 / 5; /* taller than on desktop so the full-bleed platter still outweighs the portrait salmon */
+  }
+
+  .shot--platter img {
+    object-position: 58% 50%; /* the rolls stay centred; the gold bowl gives way first */
+  }
+
+  /* the salmon steps in from the left and holds the right gutter */
+  .shot--salmon {
+    aspect-ratio: 4 / 5;
+    width: 72%;
+    align-self: flex-end;
+    margin-top: var(--s-7);
+  }
+
+  /* the tacos run off the left edge, stopping short of the right gutter */
+  .shot--tacos {
+    width: calc(90% + var(--gutter));
+    margin: var(--s-7) 0 0 calc(var(--gutter) * -1);
+  }
+
+  .atmosphere-more {
+    align-self: flex-end;
+    margin-top: var(--s-5);
+  }
+}

@@ -1,0 +1,68 @@
+/* ALTTO — design tokens
+   Provisional values for the proposal (no official brand guide yet).
+   World: a dark table under one warm lamp. Brass is light, not decoration. */
+
+:root {
+  /* ---------- colour ---------- */
+  --background: #110d0a;          /* warm slate near-black: the table */
+  --surface: #17120e;             /* one step up: the pricing chapter */
+  --surface-secondary: #1f1812;   /* image placeholders, deepest lift */
+  --text-primary: #efe7da;        /* warm off-white */
+  --text-muted: #a3978a;          /* 6.8:1 on --background, 6.5:1 on --surface */
+  --accent: #c9a36b;              /* muted brass — where the light lands */
+  --accent-soft: #e4d2ad;         /* champagne — hover / highlight */
+  --hairline: rgb(239 231 218 / 0.13);
+  --hairline-strong: rgb(239 231 218 / 0.26);
+
+  /* ---------- type ---------- */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+
+  --display-xl: clamp(3.4rem, 8.4vw, 8rem);      /* hero: ~54 → 128px */
+  --display-lg: clamp(2.6rem, 5.6vw, 5.6rem);    /* statements, prices: ~42 → 90px */
+  --heading-lg: clamp(2.1rem, 3.9vw, 4rem);      /* chapter headings: ~34 → 64px */
+  --heading-md: clamp(1.45rem, 2.1vw, 2.1rem);   /* sub-heads */
+  --body-lg: clamp(1.0625rem, 1.2vw, 1.1875rem);
+  --body: 1rem;
+  --label: 0.75rem;
+  --micro: 0.6875rem;
+
+  --leading-tight: 0.9;
+  --leading-display: 1.02;
+  --leading-body: 1.6;
+  --tracking-label: 0.16em;
+
+  /* ---------- space (4px base) ---------- */
+  --s-1: 0.25rem;   /* 4 */
+  --s-2: 0.5rem;    /* 8 */
+  --s-3: 0.75rem;   /* 12 */
+  --s-4: 1rem;      /* 16 */
+  --s-5: 1.5rem;    /* 24 */
+  --s-6: 2rem;      /* 32 */
+  --s-7: 3rem;      /* 48 */
+  --s-8: 4rem;      /* 64 */
+  --s-9: 6rem;      /* 96 */
+  --s-10: 8rem;     /* 128 */
+  --s-11: 12rem;    /* 192 */
+
+  /* chapter rhythm — deliberately uneven */
+  --chapter-quiet: clamp(5rem, 10vw, 9.5rem);
+  --chapter-normal: clamp(4rem, 7.5vw, 7rem);
+  --chapter-tight: clamp(3rem, 5vw, 4.5rem);
+
+  /* ---------- layout ---------- */
+  --page-max: 1680px;
+  --gutter: clamp(1.25rem, 5.4vw, 6rem);         /* 20px mobile → 96px wide desktop */
+  --col-gap: clamp(0.75rem, 1.6vw, 1.5rem);
+  --measure: 34rem;                              /* body text column */
+
+  /* ---------- motion ---------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-hover: 280ms;
+  --dur-reveal: 900ms;
+  --dur-image: 1400ms;
+  --rise: 24px;
+
+  /* ---------- shape ---------- */
+  --radius: 0;
+}

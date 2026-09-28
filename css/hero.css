@@ -1,0 +1,411 @@
+/* Hero — the phrase in the dark, one plate under the lamp.
+   The phrase steps down and to the right like a staircase and leads; the
+   portrait plate is secondary: it stands on the right, held on the rail's
+   right edge but well below it, so the navigation floats on clean ground.
+   "vibe." ends where the plate's feathered edge begins. */
+
+.hero {
+  --hero-size: var(--display-xl);
+  --l2: 2.1;          /* indent of line 2, in em */
+  --l3: 4.4;          /* indent of line 3, in em */
+
+  position: relative;
+  min-height: max(100svh, 640px);
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  isolation: isolate;
+}
+
+/* English sets a longer last line ("good vibes."): the staircase's last step is
+   shallower so the line ends where the Portuguese one does. */
+:root:lang(en) .hero {
+  --l3: 3.6;
+}
+
+/* ---------- top rail ---------- */
+
+.rail {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-6);
+  padding-top: clamp(var(--s-4), 2.4vw, var(--s-6));
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  font-variation-settings: "wdth" 125;
+  letter-spacing: 0.34em;
+  margin-right: -0.34em;
+}
+
+.rail-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(var(--s-4), 2.6vw, var(--s-7));
+}
+
+.rail-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--text-primary);
+  text-shadow: 0 1px 10px rgb(17 13 10 / 0.8);
+  transition: color var(--dur-hover) ease;
+}
+
+.rail-links a:hover,
+.rail-links a:focus-visible {
+  color: var(--accent-soft);
+}
+
+.rail-links .arrow {
+  margin-left: 0.4em;
+  color: var(--accent);
+}
+
+.rail-short {
+  display: none;
+}
+
+/* ---------- PT / EN: a utility that almost disappears into the rail ---------- */
+
+.rail-lang {
+  margin-left: calc(var(--s-2) * -1);
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+}
+
+.lang-opt {
+  appearance: none;
+  min-width: 32px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 0.35em;
+  border: 0;
+  background: none;
+  color: var(--text-primary);
+  font: inherit;
+  font-family: var(--font-body);
+  font-size: var(--label);
+  font-weight: 500;
+  font-variation-settings: "wdth" 112;
+  letter-spacing: var(--tracking-label);
+  line-height: 1.2;
+  text-shadow: 0 1px 10px rgb(17 13 10 / 0.8);
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 200ms ease;
+}
+
+.lang-opt[aria-pressed="true"] {
+  opacity: 1;
+  cursor: default;
+}
+
+.lang-opt[aria-pressed="false"]:hover,
+.lang-opt[aria-pressed="false"]:focus-visible {
+  opacity: 0.85;
+}
+
+.lang-opt:focus-visible {
+  outline-offset: 0;
+}
+
+.lang-sep {
+  font-size: var(--label);
+  color: var(--text-muted);
+  text-shadow: 0 1px 10px rgb(17 13 10 / 0.8);
+}
+
+/* ---------- the plate: a portrait standing below the rail ---------- */
+
+.hero-plate {
+  --plate-top: clamp(7.5rem, 17vh, 11rem);          /* ~80px of clear ground under the rail */
+  --plate-bottom: clamp(var(--s-9), 15vh, var(--s-11));
+
+  position: absolute;
+  z-index: 0;
+  top: var(--plate-top);
+  right: var(--gutter);                             /* the rail's right edge */
+  bottom: var(--plate-bottom);
+  /* a wide portrait (at most 0.78 of its height): enough width to answer the phrase,
+     still taller than wide; its feathered left edge meets the end of "vibe." */
+  width: min(33.5vw, calc((100svh - var(--plate-top) - var(--plate-bottom)) * 0.78));
+}
+
+/* the frame is less tall than the photograph: the lamp above the glass is what goes;
+   the foam, both boards and the lowest rolls stay in */
+.hero-plate img {
+  object-position: 50% 42%;
+}
+
+.hero-hours {
+  position: absolute;
+  z-index: 2;
+  right: var(--gutter);
+  bottom: clamp(var(--s-6), 5vh, var(--s-8));
+  display: grid;
+  justify-items: end;
+  gap: var(--s-1);
+  font-size: var(--label);
+  font-weight: 500;
+  font-variation-settings: "wdth" 112;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.hero-hours span:first-child {
+  color: var(--accent);
+}
+
+/* ---------- copy ---------- */
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  align-self: end;
+  padding-bottom: clamp(var(--s-7), 9vh, var(--s-10));
+  padding-top: var(--s-9);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: var(--hero-size);
+  font-weight: 340;
+  font-variation-settings: "opsz" 144;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.028em;
+}
+
+.hero-title .line {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-title .line:nth-child(2) {
+  padding-left: calc(var(--l2) * 1em);
+}
+
+.hero-title .line:nth-child(3) {
+  padding-left: calc(var(--l3) * 1em);
+}
+
+.hero-title em {
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.hero-sub {
+  max-width: 22rem;
+  margin-top: clamp(var(--s-6), 4vh, var(--s-7));
+  margin-left: 0.2em;
+  font-size: var(--body-lg);
+  line-height: 1.5;
+  color: var(--text-muted);
+  text-wrap: balance;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-7);
+  margin-top: var(--s-5);
+  margin-left: 0.2em;
+}
+
+/* ---------- entrance: one settle, the phrase and the plate together ---------- */
+
+.js .hero-title .line,
+.js .hero-sub,
+.js .hero-actions,
+.js .hero-hours {
+  animation: hero-rise var(--dur-reveal) var(--ease-out) both;
+}
+
+.js .hero-title .line:nth-child(2) { animation-delay: 70ms; }
+.js .hero-title .line:nth-child(3) { animation-delay: 140ms; }
+.js .hero-sub { animation-delay: 320ms; }
+.js .hero-actions,
+.js .hero-hours { animation-delay: 400ms; }
+
+.js .hero-plate img {
+  animation: hero-plate var(--dur-image) var(--ease-out) both;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(var(--rise));
+  }
+}
+
+@keyframes hero-plate {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
+/* ---------- tablet landscape: shallower staircase ---------- */
+
+@media (max-width: 1180px) {
+  .hero {
+    --hero-size: clamp(3.4rem, 9.4vw, 6.6rem);
+    --l2: 1.3;
+    --l3: 2.9;
+  }
+
+  .rail-optional {
+    display: none;
+  }
+
+  :root:lang(en) .hero {
+    --l3: 2.1;
+  }
+}
+
+/* ---------- phones and tablet portrait: the plate goes first,
+   the phrase climbs onto its lower edge ---------- */
+
+@media (max-width: 860px) {
+  .hero {
+    min-height: auto;
+    grid-template-rows: auto auto;
+    padding: 0;
+  }
+
+  .rail {
+    padding: var(--s-2) var(--gutter) 0;
+  }
+
+  /* the plate starts under the rail (never behind it) and stops short of the left
+     edge, so the phrase — not the photograph — owns the first screen */
+  .hero-plate {
+    --plate-top: 4.25rem;
+    --plate-h: max(50svh, 340px);
+    --fade-l: 16%;
+    --fade-r: 0%;    /* runs off the right edge */
+    --fade-t: 10%;
+    --fade-b: 34%;   /* dissolve into the real (grained) ground — no seam */
+    top: var(--plate-top);
+    left: auto;
+    right: 0;
+    width: min(92%, calc(var(--plate-h) * 0.92)); /* wider, but still a portrait on tablets */
+    bottom: auto;
+    height: var(--plate-h);
+  }
+
+  .hero-plate img {
+    object-position: 50% 42%; /* whole glass and the tray; the lamp above is what goes */
+  }
+
+  /* the phrase needs a darker floor where it crosses the photograph */
+  .hero-plate::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 55%;
+    background: linear-gradient(0deg, var(--background) 0%, rgb(17 13 10 / 0.7) 38%, rgb(17 13 10 / 0) 100%);
+    pointer-events: none;
+  }
+
+  .hero-hours {
+    order: 3;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    justify-items: start;
+    padding: 0 var(--gutter) var(--s-9);
+    margin-top: calc(var(--s-9) * -1 + var(--s-6));
+  }
+
+  /* the phrase climbs only onto the plate's feathered lower edge */
+  .hero-copy {
+    padding: calc(4.25rem + max(50svh, 340px) - 5.5rem) var(--gutter) var(--s-9);
+  }
+
+  .hero-title {
+    font-size: clamp(3.3rem, 16.4vw, 6rem);
+    line-height: 0.92;
+  }
+
+  .hero-title .line:nth-child(2) {
+    padding-left: 0.9em;
+  }
+
+  .hero-title .line:nth-child(3) {
+    padding-left: 0.45em;
+  }
+
+  .hero-sub {
+    margin-top: var(--s-6);
+    font-size: var(--body);
+  }
+
+  .hero-actions {
+    gap: 0 var(--s-6);
+    margin-top: var(--s-4);
+  }
+}
+
+/* phones: Instagram leaves the rail (it stays in the visit links and the footer)
+   so the language control fits without shrinking the type */
+@media (max-width: 560px) {
+  .rail-ig {
+    display: none;
+  }
+}
+
+/* phones: the hero ends when its content does — no viewport-filling tail.
+   headline → note 32 · note → links 32 · links → hours 48 · hours → next chapter ~80 */
+@media (max-width: 760px) {
+  .hero-actions {
+    margin-top: var(--s-6);
+  }
+
+  .hero-hours {
+    margin-top: calc(var(--s-9) * -1 + var(--s-7));
+    padding-bottom: var(--s-6);
+  }
+}
+
+@media (max-width: 760px) {
+  .wordmark {
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+  }
+
+  .rail-links {
+    gap: var(--s-4);
+  }
+
+  .rail-long {
+    display: none;
+  }
+
+  .rail-short {
+    display: inline;
+  }
+
+  .rail-links a,
+  .lang-opt,
+  .lang-sep {
+    font-size: var(--micro);
+    font-variation-settings: "wdth" 100;
+    letter-spacing: 0.12em;
+  }
+}

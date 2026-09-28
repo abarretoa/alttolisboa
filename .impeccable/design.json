@@ -1,0 +1,357 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-23T21:27:03.663Z",
+  "title": "Design System: ALTTO Lisboa",
+  "extensions": {
+    "colorMeta": {
+      "table-black": {
+        "role": "neutral",
+        "displayName": "Table Black",
+        "canonical": "#110d0a",
+        "note": "Provisional. Page ground, with baked warm grain.",
+        "tonalRamp": [
+          "#0e0a08",
+          "#282320",
+          "#443f3b",
+          "#625c59",
+          "#857f7b",
+          "#a9a39f",
+          "#cfc9c5",
+          "#f3ede8"
+        ]
+      },
+      "lamp-surface": {
+        "role": "neutral",
+        "displayName": "Lamp Surface",
+        "canonical": "#17120e",
+        "note": "Provisional. Pricing chapter only, under a radial brass pool.",
+        "tonalRamp": [
+          "#0f0a07",
+          "#28231f",
+          "#443e3a",
+          "#635c57",
+          "#867f79",
+          "#aaa39e",
+          "#d0c9c3",
+          "#f4ede7"
+        ]
+      },
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#efe7da",
+        "note": "Provisional. Primary text.",
+        "tonalRamp": [
+          "#0f0a03",
+          "#292319",
+          "#453f34",
+          "#635d52",
+          "#867f73",
+          "#aba497",
+          "#d1c9bd",
+          "#f5ede0"
+        ]
+      },
+      "smoke": {
+        "role": "neutral",
+        "displayName": "Smoke",
+        "canonical": "#a3978a",
+        "note": "Provisional. Secondary text, 6.8:1 on Table Black.",
+        "tonalRamp": [
+          "#110902",
+          "#2c2218",
+          "#483e32",
+          "#675c50",
+          "#8a7e71",
+          "#afa295",
+          "#d5c8bb",
+          "#f9ecde"
+        ]
+      },
+      "brass": {
+        "role": "primary",
+        "displayName": "Lamp Brass",
+        "canonical": "#c9a36b",
+        "note": "Provisional. Points of light only.",
+        "tonalRamp": [
+          "#1e0200",
+          "#3a1b00",
+          "#593800",
+          "#79561d",
+          "#9d7942",
+          "#c39e66",
+          "#ebc48b",
+          "#ffe8ae"
+        ]
+      },
+      "champagne": {
+        "role": "primary",
+        "displayName": "Champagne",
+        "canonical": "#e4d2ad",
+        "note": "Provisional. Hover/focus and one italic accent.",
+        "tonalRamp": [
+          "#150800",
+          "#302200",
+          "#4d3d1d",
+          "#6b5b3a",
+          "#8f7e5c",
+          "#b4a37f",
+          "#dac9a4",
+          "#ffedc7"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgb(239 231 218 / 0.13)"
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "rgb(239 231 218 / 0.26)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero phrase; oversized spread words and the rating number are one-off scale moments of this role."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Chapter statements, the Preços title, the street address, prices."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Lede line, meal-period headings, city line, phone number."
+      },
+      "body-lg": {
+        "displayName": "Body Large",
+        "purpose": "Hero subline, price-row descriptions, hours rows."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Short supporting sentences in Smoke, about 22rem wide."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navigation, text links, qualifiers, field labels, hours, footer. Uppercase."
+      },
+      "micro": {
+        "displayName": "Micro",
+        "purpose": "Honest placeholder notes about temporary photography only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "rail-legibility-halo",
+        "value": "text-shadow: 0 1px 10px rgb(17 13 10 / 0.8)",
+        "purpose": "Legibility of top navigation over the hero photograph. Not elevation; no box-shadow exists in the system."
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "ground-grain",
+        "value": "body background-image: SVG feTurbulence fractalNoise (baseFrequency 0.9), warm tint at 5% alpha, 160px tile",
+        "purpose": "Keeps the dark ground from reading as flat UI black."
+      },
+      {
+        "name": "lamp-pool",
+        "value": "radial-gradient(52% 64% at 74% 38%, rgb(201 163 107 / 0.075), rgb(201 163 107 / 0) 72%), #17120e",
+        "purpose": "The single lit surface: pricing chapter."
+      },
+      {
+        "name": "plate-mask",
+        "value": "mask-image: two linear-gradients (fade-l 24%, fade-r 20%, fade-t 18%, fade-b 22%) composited with intersect",
+        "purpose": "Dissolves free-standing photographs into the ground; an edge is set to 0% where the plate bleeds off the page."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only easing curve for reveals, underline draws and arrow nudges."
+      },
+      {
+        "name": "dur-hover",
+        "value": "280ms",
+        "purpose": "Colour and arrow transitions on hover/focus."
+      },
+      {
+        "name": "dur-reveal",
+        "value": "900ms",
+        "purpose": "Scroll reveals, hero settle, link underline draw."
+      },
+      {
+        "name": "dur-image",
+        "value": "1400ms",
+        "purpose": "Image settle from scale 1.045 (1.04 in the hero)."
+      },
+      {
+        "name": "rise",
+        "value": "24px",
+        "purpose": "Single rise distance for reveals."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "@media (prefers-reduced-motion: reduce): transitions and animations to 0.01ms, all reveals shown at rest; reveal.js marks every target in view",
+        "purpose": "Content never depends on motion or JavaScript."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "hero-shallow",
+        "value": "1180px"
+      },
+      {
+        "name": "tablet",
+        "value": "1080px"
+      },
+      {
+        "name": "hero-stack",
+        "value": "860px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      }
+    ],
+    "focus": {
+      "value": "outline: 2px solid #c9a36b; outline-offset: 4px",
+      "purpose": "All focus-visible states."
+    },
+    "provenance": {
+      "colors": "Provisional; no official ALTTO brand guide exists.",
+      "photography": "All temporary licensed stock under assets/temporary/ (see CREDITS.md); replace with official photography graded to the same warm, dark-lifted look.",
+      "logo": "Official logo file absent; the name is typeset as a stand-in."
+    }
+  },
+  "components": [
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "The system's only button: label caps, resting hairline, brass line draws on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\">Ver no Google<span class=\"ds-arrow\" aria-hidden=\"true\">↗</span></a>",
+      "css": ".ds-link{position:relative;display:inline-flex;align-items:center;gap:.55em;min-height:44px;color:#efe7da;text-decoration:none;font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;font-size:.75rem;font-weight:500;font-variation-settings:\"wdth\" 112;letter-spacing:.16em;text-transform:uppercase;line-height:1.2;transition:color 280ms ease}.ds-link::before,.ds-link::after{content:\"\";position:absolute;left:0;right:0;bottom:9px;height:1px;background:rgb(239 231 218 / .26)}.ds-link::after{background:#c9a36b;transform:scaleX(0);transform-origin:left;transition:transform 900ms cubic-bezier(.16,1,.3,1)}.ds-link .ds-arrow{display:inline-block;color:#c9a36b;transition:transform 280ms cubic-bezier(.16,1,.3,1)}.ds-link:hover,.ds-link:focus-visible{color:#e4d2ad}.ds-link:hover::after,.ds-link:focus-visible::after{transform:scaleX(1)}.ds-link:hover .ds-arrow,.ds-link:focus-visible .ds-arrow{transform:translate(2px,-2px)}.ds-link:focus-visible{outline:2px solid #c9a36b;outline-offset:4px}"
+    },
+    {
+      "name": "Text Link (Accent)",
+      "kind": "button",
+      "refersTo": "text-link-accent",
+      "description": "Primary action in a group: brass underline drawn at rest.",
+      "html": "<a class=\"ds-link-accent\" href=\"#\">Ver preços<span class=\"ds-arrow\" aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-link-accent{position:relative;display:inline-flex;align-items:center;gap:.55em;min-height:44px;color:#efe7da;text-decoration:none;font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;font-size:.75rem;font-weight:500;font-variation-settings:\"wdth\" 112;letter-spacing:.16em;text-transform:uppercase;line-height:1.2;transition:color 280ms ease}.ds-link-accent::after{content:\"\";position:absolute;left:0;right:0;bottom:9px;height:1px;background:#c9a36b}.ds-link-accent .ds-arrow{display:inline-block;color:#c9a36b;transition:transform 280ms cubic-bezier(.16,1,.3,1)}.ds-link-accent:hover,.ds-link-accent:focus-visible{color:#e4d2ad}.ds-link-accent:hover .ds-arrow,.ds-link-accent:focus-visible .ds-arrow{transform:translateX(3px)}.ds-link-accent:focus-visible{outline:2px solid #c9a36b;outline-offset:4px}"
+    },
+    {
+      "name": "Top Rail",
+      "kind": "nav",
+      "refersTo": "rail-link",
+      "description": "Typeset wordmark left, label links right, over the hero.",
+      "html": "<nav class=\"ds-rail\"><a class=\"ds-mark\" href=\"#\">ALTTO</a><ul><li><a href=\"#\">Experiência</a></li><li><a href=\"#\">Preços</a></li><li><a href=\"#\">Localização</a></li><li><a href=\"#\">Instagram<span aria-hidden=\"true\">↗</span></a></li></ul></nav>",
+      "css": ".ds-rail{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:24px 32px;background:#110d0a}.ds-rail ul{display:flex;gap:32px;margin:0;padding:0;list-style:none}.ds-mark{display:inline-flex;align-items:center;min-height:44px;color:#efe7da;text-decoration:none;font-family:\"Archivo\",sans-serif;font-size:.95rem;font-weight:500;font-variation-settings:\"wdth\" 125;letter-spacing:.34em}.ds-rail ul a{display:inline-flex;align-items:center;min-height:44px;color:#efe7da;text-decoration:none;font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;font-size:.75rem;font-weight:500;font-variation-settings:\"wdth\" 112;letter-spacing:.16em;text-transform:uppercase;line-height:1.2;text-shadow:0 1px 10px rgb(17 13 10 / .8);transition:color 280ms ease}.ds-rail ul a span{margin-left:.4em;color:#c9a36b}.ds-rail a:hover,.ds-rail a:focus-visible{color:#e4d2ad}.ds-rail a:focus-visible{outline:2px solid #c9a36b;outline-offset:4px}"
+    },
+    {
+      "name": "Price Row",
+      "kind": "custom",
+      "refersTo": "price",
+      "description": "Menu-card price rows on the lit surface: description left, Fraunces price right with a raised brass euro sign.",
+      "html": "<div class=\"ds-menu\"><h3 class=\"ds-period\">Almoço <span>12:00–15:00</span></h3><dl><div class=\"ds-row\"><dt>Segunda a sexta<span class=\"ds-perk\">Recarga de bebida grátis</span></dt><dd class=\"ds-price\"><span class=\"ds-cur\">€</span>17,50</dd></div><div class=\"ds-row\"><dt>Sábado, domingo e feriados</dt><dd class=\"ds-price\"><span class=\"ds-cur\">€</span>21,95</dd></div></dl></div>",
+      "css": ".ds-menu{padding:48px 32px;color:#efe7da;background:radial-gradient(52% 64% at 74% 38%,rgb(201 163 107 / .075),rgb(201 163 107 / 0) 72%),#17120e}.ds-menu dl{margin:0}.ds-period{display:flex;align-items:baseline;justify-content:space-between;margin:0;padding-bottom:16px;font-family:\"Fraunces\",Georgia,serif;font-size:clamp(1.45rem,2.1vw,2.1rem);font-weight:400;font-variation-settings:\"opsz\" 72;line-height:1.1}.ds-period span{font-family:\"Archivo\",sans-serif;font-size:.75rem;font-weight:500;font-variation-settings:\"wdth\" 112;letter-spacing:.16em;color:#a3978a;font-variant-numeric:tabular-nums}.ds-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;column-gap:32px;padding:32px 0 20px;border-top:1px solid rgb(239 231 218 / .26)}.ds-row dt{display:grid;gap:8px;padding-bottom:.9em;font-family:\"Archivo\",sans-serif;font-size:1.125rem;line-height:1.35}.ds-perk{font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;font-size:.75rem;font-weight:500;font-variation-settings:\"wdth\" 112;letter-spacing:.16em;text-transform:uppercase;line-height:1.2;color:#c9a36b}.ds-price{margin:0;font-family:\"Fraunces\",Georgia,serif;font-size:clamp(2.6rem,5.6vw,5.6rem);font-weight:330;font-variation-settings:\"opsz\" 144;line-height:.95;letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}.ds-cur{display:inline-block;margin-right:.08em;font-size:.42em;vertical-align:.95em;letter-spacing:0;color:#c9a36b}"
+    },
+    {
+      "name": "Phone Link",
+      "kind": "custom",
+      "refersTo": "phone-link",
+      "description": "Title-size Fraunces number with a hairline underline that turns brass.",
+      "html": "<a class=\"ds-phone\" href=\"tel:+351912398756\">+351 912 398 756</a>",
+      "css": ".ds-phone{display:inline-block;padding:8px 0;color:#efe7da;text-decoration:none;font-family:\"Fraunces\",Georgia,serif;font-size:clamp(1.45rem,2.1vw,2.1rem);font-weight:350;font-variation-settings:\"opsz\" 48;line-height:1.2;font-variant-numeric:lining-nums;white-space:nowrap;border-bottom:1px solid rgb(239 231 218 / .26);transition:color 280ms ease,border-color 280ms ease}.ds-phone:hover,.ds-phone:focus-visible{color:#e4d2ad;border-color:#c9a36b}.ds-phone:focus-visible{outline:2px solid #c9a36b;outline-offset:4px}"
+    },
+    {
+      "name": "Hours List",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Brass field label, then meal and time rows on hairline rules.",
+      "html": "<div class=\"ds-hours\"><p class=\"ds-label\">Todos os dias</p><dl><div><dt>Almoço</dt><dd>12:00–15:00</dd></div><div><dt>Jantar</dt><dd>19:00–23:00</dd></div></dl></div>",
+      "css": ".ds-hours{max-width:22rem;color:#efe7da;font-family:\"Archivo\",sans-serif}.ds-label{margin:0 0 16px;font-family:\"Archivo\",\"Helvetica Neue\",Arial,sans-serif;font-size:.75rem;font-weight:500;font-variation-settings:\"wdth\" 112;letter-spacing:.16em;text-transform:uppercase;line-height:1.2;color:#c9a36b}.ds-hours dl{display:grid;gap:8px;margin:0}.ds-hours dl div{display:flex;justify-content:space-between;gap:24px;padding-bottom:8px;border-bottom:1px solid rgb(239 231 218 / .13);font-size:1.125rem}.ds-hours dt{color:#a3978a}.ds-hours dd{margin:0;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Rating Figure",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "One oversized light Fraunces number with brass stars and the source in Smoke.",
+      "html": "<div class=\"ds-rating\"><span class=\"ds-num\">4,7</span><div class=\"ds-meta\"><svg viewBox=\"0 0 100 18\" width=\"100\" height=\"18\" aria-hidden=\"true\"><defs><path id=\"ds-star\" d=\"M9 0l2.6 5.8 6.4.6-4.8 4.2 1.4 6.3L9 13.6 3.4 16.9l1.4-6.3L0 6.4l6.4-.6z\"/><clipPath id=\"ds-stars\"><use href=\"#ds-star\"/><use href=\"#ds-star\" x=\"20.5\"/><use href=\"#ds-star\" x=\"41\"/><use href=\"#ds-star\" x=\"61.5\"/><use href=\"#ds-star\" x=\"82\"/></clipPath></defs><rect width=\"100\" height=\"18\" clip-path=\"url(#ds-stars)\" fill=\"rgb(239 231 218 / .26)\"/><rect width=\"94\" height=\"18\" clip-path=\"url(#ds-stars)\" fill=\"#c9a36b\"/></svg><p>Google · 196 avaliações</p></div></div>",
+      "css": ".ds-rating{display:flex;align-items:flex-end;gap:32px;color:#efe7da}.ds-num{font-family:\"Fraunces\",Georgia,serif;font-size:clamp(7rem,17vw,16rem);font-weight:300;font-variation-settings:\"opsz\" 144;line-height:.78;letter-spacing:-.05em;font-variant-numeric:lining-nums}.ds-meta{display:grid;gap:12px;padding-bottom:.4rem}.ds-meta svg{display:block}.ds-meta p{margin:0;font-family:\"Archivo\",sans-serif;font-size:1rem;color:#a3978a}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Table Under One Lamp",
+    "overview": "The page is a dark table seen under one warm lamp. Every chapter is lit, not boxed: type and photographs sit directly on a grained, warm near-black ground, and the only colour that behaves like colour is brass, placed where light would land (a price's euro sign, an underline, a star, a field label). Nothing is contained in a card, a pill or a panel; the one tonal lift in the whole page is the pricing chapter, and it is lit by a soft radial pool rather than framed.\n\nComposition is editorial, not modular. A 12-column grid is used to break alignment on purpose: photographs are placed at unequal sizes and proportions, bleed off the page edges, and dissolve into the ground through masked edges. Display type is large, set in Fraunces at its largest optical size, and does the work other sites give to icons and boxes. Chapter padding is deliberately uneven (quiet, normal, tight) so the scroll has pace rather than a metronome.\n\nMotion is a single settle: things rise 24px and fade in on one easing curve, the hero phrase and plate arrive together, and the Sushi / Drinks / boa vibe spread resolves on one shared cue. Everything is visible without JavaScript and without motion.\n\nColour values are provisional. They were chosen for the proposal in the absence of an official brand guide and should be re-checked against official ALTTO material when it arrives. All photography is temporary and must be replaced and graded to the same warm, dark-lifted look before production.",
+    "keyCharacteristics": [
+      "Warm, grained near-black ground; warm off-white type; brass only where light falls.",
+      "Fraunces (opsz 144, light weights) for everything spoken; Archivo on its width axis for everything read as data.",
+      "Zero radius, zero box shadows, no containers; hairlines are the only rules.",
+      "Unequal, bleeding, edge-masked photographs on a 12-column grid.",
+      "One easing curve, one rise distance, one cue per moment; reduced motion honoured."
+    ],
+    "rules": [
+      {
+        "name": "The Where-Light-Lands Rule",
+        "body": "Brass marks a point of light (a currency sign, a line, a label, a star, a focus ring), never a surface, a button fill or a background block. If brass covers more than a few words or a hairline, it is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Lift Rule",
+        "body": "The page has one tonal surface above the ground (Lamp Surface, the pricing chapter). Other chapters sit directly on Table Black and are separated by space or a hairline, not by alternating bands.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Italic Rule",
+        "body": "Italic appears on at most one word per chapter (hero \"vibe.\", experience \"experiência.\", the spread's \"vibe\"), at a light weight (300). It is an inflection, never a style for whole lines.",
+        "section": "typography"
+      },
+      {
+        "name": "The Voice and Data Rule",
+        "body": "Anything spoken is Fraunces; anything scanned (times, labels, links, navigation) is Archivo caps on the width axis. Prices are spoken: they are Fraunces, the biggest type in their chapter, with lining tabular numerals and a brass euro sign at 0.42em raised to the cap line.",
+        "section": "typography"
+      },
+      {
+        "name": "The Typeset Name Rule",
+        "body": "The name ALTTO is set typographically (Archivo, wdth 125, weight 500, 0.34em tracking) because the official logo file is not in the project. This is a stand-in, not a logo; do not redraw or imitate the official mark.",
+        "section": "typography"
+      },
+      {
+        "name": "The Unequal Frames Rule",
+        "body": "No two photographs in a spread share size and proportion, and at least one frame per spread touches a page edge. Equal image grids are the category default this system refuses.",
+        "section": "layout"
+      },
+      {
+        "name": "The Lit, Not Boxed Rule",
+        "body": "A chapter or image is separated from the ground by light, masking or space, never by a shadow, a border box or a card.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Dissolving Plate Rule",
+        "body": "Free-standing photographs are masked into the ground on every edge that does not bleed off the page. The grade lives in the raster (warm blacks lifted to the table colour); there is no CSS filter.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep brass to points of light: a euro sign, a drawn underline, a star, a label, a focus ring (The Where-Light-Lands Rule).",
+      "Do set statements, prices and big numbers in Fraunces at opsz 144 and light weights (300 to 350), and all data in Archivo Label caps (0.75rem, 500, 0.16em, wdth 112).",
+      "Do use at most one italic word per chapter.",
+      "Do place photographs at unequal sizes and proportions, let at least one bleed off an edge, and mask free-standing plates into the ground.",
+      "Do separate chapters with space, one of the three chapter paddings, or a 13% hairline.",
+      "Do keep every interactive target at least 44px high and give it a 2px brass focus outline.",
+      "Do mark temporary photography honestly in Micro type until official photography replaces it."
+    ],
+    "donts": [
+      "Don't add rounded corners, pills, cards, bordered boxes or box shadows.",
+      "Don't fill buttons or backgrounds with brass; there are no filled buttons in this system.",
+      "Don't introduce a second tonal surface or alternating section bands (The One Lift Rule).",
+      "Don't lay photographs in equal-size grids or carousels.",
+      "Don't stagger many small elements as decorative confetti; a moment resolves on one cue.",
+      "Don't redraw or imitate the official ALTTO logo; set the name typographically until the file is supplied.",
+      "Don't treat the current hex values or the stock photographs as final; both are provisional."
+    ]
+  }
+}
