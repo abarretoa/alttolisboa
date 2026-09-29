@@ -7,7 +7,7 @@
 //   data-i18n-attr="attr:key;…" → attributes (alt, aria-label, meta content)
 //
 // Facts are never translated: prices, hours, the address, the phone number,
-// the rating and review count.
+// the rating and the review breakdown.
 //
 // Reviews follow the page language: verbatim when the original is in it,
 // otherwise a faithful translation labelled "Traduzido do… / Translated from…".
@@ -26,6 +26,7 @@
         "ALTTO Lisboa. Rodízio de sushi na Rua da Escola de Medicina Veterinária 3. Almoço 12:00–15:00, jantar 19:00–23:00, todos os dias.",
       "meta.ogLocale": "pt_PT",
       "meta.ogLocaleAlt": "en_GB",
+      "meta.ogImageAlt": "Sushi e uma bebida em tabuleiros de madeira, numa mesa escura do ALTTO.",
 
       skip: "Saltar para os preços",
       "nav.label": "Principal",
@@ -44,6 +45,9 @@
       "hero.sub": "Rodízio de sushi em Lisboa, ao almoço e ao jantar.",
       "cta.prices": "Ver preços",
       "cta.directions": "Como chegar",
+      "cta.whatsapp": "Reservar por WhatsApp",
+      "cta.whatsappHref":
+        "https://wa.me/351912398756?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20uma%20mesa%20no%20ALTTO%20Lisboa.",
 
       "exp.title": "Há noites que pedem mais um <em>pouco.</em>",
       "exp.note": "Sushi e cozinha asiática contemporânea, em Lisboa.",
@@ -60,11 +64,13 @@
       "price.everyDay": "Todos os dias",
 
       "atmo.label": "Atmosfera",
-      "atmo.title": "Como se vive<br /> o ALTTO.",
+      "atmo.title": "Como se vive <br />o ALTTO.",
 
       "rating.heading": "Avaliações no Google",
       "rating.outOf": "de 5 estrelas",
-      "rating.source": "Google · 197 avaliações",
+      // "more than 190" stays true as reviews come in. The exact figures (4,7, the 197-review
+      // breakdown) are hardcoded in index.html: verify them periodically against the Google listing.
+      "rating.source": "Google · mais de 190 avaliações",
       "rating.dist": "Distribuição das avaliações",
       "rating.cta": "Ver no Google",
       "rating.five": "5 de 5 estrelas",
@@ -83,6 +89,8 @@
       "visit.reserve": "Reservas por telefone",
       "visit.call": "Ligar",
 
+      "footer.complaints": "Livro de Reclamações",
+
       "alt.hero": "Seleção de sushi e bebida numa mesa escura do ALTTO.",
       "alt.experience": "Preparação de salmão para sushi.",
       "alt.moment": "Martini vermelho no balcão do bar, com prateleiras iluminadas ao fundo.",
@@ -97,6 +105,7 @@
         "ALTTO Lisboa. All-you-can-eat sushi at Rua da Escola de Medicina Veterinária 3. Lunch 12:00–15:00, dinner 19:00–23:00, every day.",
       "meta.ogLocale": "en_GB",
       "meta.ogLocaleAlt": "pt_PT",
+      "meta.ogImageAlt": "Sushi and a drink on wooden trays, on a dark table at ALTTO.",
 
       skip: "Skip to prices",
       "nav.label": "Main",
@@ -115,6 +124,9 @@
       "hero.sub": "All-you-can-eat sushi in Lisbon, for lunch and dinner.",
       "cta.prices": "View prices",
       "cta.directions": "Get directions",
+      "cta.whatsapp": "Book via WhatsApp",
+      "cta.whatsappHref":
+        "https://wa.me/351912398756?text=Hello%21%20I%27d%20like%20to%20book%20a%20table%20at%20ALTTO%20Lisboa.",
 
       "exp.title": "Some nights call for a little <em>more.</em>",
       "exp.note": "Contemporary sushi and Asian cuisine in Lisbon.",
@@ -131,11 +143,11 @@
       "price.everyDay": "Every day",
 
       "atmo.label": "Atmosphere",
-      "atmo.title": "A table<br /> at ALTTO.",
+      "atmo.title": "A table <br />at ALTTO.",
 
       "rating.heading": "Google reviews",
       "rating.outOf": "out of 5 stars",
-      "rating.source": "Google · 197 reviews",
+      "rating.source": "Google · 190+ reviews",
       "rating.dist": "Rating distribution",
       "rating.cta": "View on Google",
       "rating.five": "5 out of 5 stars",
@@ -153,6 +165,8 @@
       "visit.heading": "Location and contacts",
       "visit.reserve": "Reservations by phone",
       "visit.call": "Call",
+
+      "footer.complaints": "Complaints Book",
 
       "alt.hero": "A selection of sushi and a drink on a dark table at ALTTO.",
       "alt.experience": "Salmon being prepared for sushi.",

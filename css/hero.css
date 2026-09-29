@@ -55,6 +55,7 @@
 }
 
 .rail-links a {
+  position: relative;
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -219,12 +220,18 @@
   text-wrap: balance;
 }
 
+/* reservation leads on its own line (brass underline); prices and directions follow as a pair */
 .hero-actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
   gap: var(--s-2) var(--s-7);
   margin-top: var(--s-5);
   margin-left: 0.2em;
+}
+
+.hero-reserve {
+  grid-column: 1 / -1;
+  justify-self: start;
 }
 
 /* ---------- entrance: one settle, the phrase and the plate together ---------- */
@@ -393,8 +400,14 @@
     gap: var(--s-4);
   }
 
+  /* visually hidden, still the link's accessible name (the short form is aria-hidden) */
   .rail-long {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 
   .rail-short {

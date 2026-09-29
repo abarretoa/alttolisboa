@@ -153,6 +153,27 @@
   white-space: nowrap;
 }
 
+/* legal utility, under the copyright: same muted label type as the rest of the footer */
+.footer-legal {
+  grid-column: 10 / -1;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  white-space: nowrap;
+  transition: color var(--dur-hover) ease;
+}
+
+.footer-legal .arrow {
+  margin-left: 0.4em;
+  color: var(--accent);
+}
+
+.footer-legal:hover,
+.footer-legal:focus-visible {
+  color: var(--accent-soft);
+}
+
 .footer-note {
   grid-column: 1 / -1;
   margin-top: var(--s-4);
@@ -214,6 +235,11 @@
   .footer-ig,
   .footer-copy {
     grid-column: auto;
+    justify-self: start;
+  }
+
+  .footer-legal {
+    grid-column: 1 / -1;
     justify-self: start;
   }
 }

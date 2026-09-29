@@ -109,14 +109,20 @@
   transform: scale(0.96);
 }
 
-/* phones: the plate joins the flow between SUSHI and DRINKS, so the word always
-   crosses the lower stem whatever the width (DRINKS is pulled up by a share of
-   the plate's own height, which is a share of the viewport width) */
+/* phones: one centred column — SUSHI over the glass, DRINKS across the lower stem,
+   boa vibe closing on the faded counter. The plate is the axis: every word is
+   centred on it and every overlap is a share of its height (--plate-h), so the
+   words hit the same spot on the glass at any phone width. */
 @media (max-width: 760px) {
   .moment {
+    --plate-w: min(88vw, 27rem);
+    --plate-h: calc(var(--plate-w) * 4 / 3);
+
     display: grid;
     grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
     padding-top: var(--s-7);
+    text-align: center;
   }
 
   .moment-words {
@@ -130,32 +136,49 @@
 
   .w-sushi {
     grid-row: 1;
+    margin-left: 0;
+    padding-right: 0.045em;  /* the tight tracking's trailing space, so the word sits on the axis */
     font-size: 25vw;
   }
 
   .moment-plate {
+    --fade-l: 14%;
+    --fade-r: 14%;           /* even fades: the glass stands in the middle, not against an edge */
+    --fade-t: 16%;
+    --fade-b: 18%;
     position: relative;
     grid-row: 2;
     top: auto;
     right: auto;
-    justify-self: end;
-    width: 78vw;
-    margin: calc(var(--s-4) * -1) calc(var(--gutter) * -1) 0 0;
+    width: var(--plate-w);
+    margin-top: calc(var(--plate-h) * -0.1);  /* its faded head slides under SUSHI */
+  }
+
+  .moment-plate img {
+    object-position: 58% 50%;  /* the glass on the column's axis */
   }
 
   .w-drinks {
     grid-row: 3;
     grid-column: 1 / -1;
-    align-self: start;   /* its row must not stretch: boa vibe follows the word, not a void */
-    margin-top: -33vw;
+    justify-self: center;
+    align-self: start;       /* its row must not stretch: boa vibe follows the word, not a void */
+    margin-top: calc(var(--plate-h) * -0.33);
+    padding-left: 0.06em;    /* balances the tracking after the last letter */
     font-size: 11.4vw;
   }
 
   .w-vibe {
     grid-row: 4;
     grid-column: 1 / -1;
-    justify-self: end;
-    margin-top: -10vw;   /* rises onto the plate's faded counter, just under DRINKS */
-    font-size: 19vw;
+    justify-self: center;
+    margin-top: calc(var(--plate-h) * -0.06);  /* just under the glass's foot, on the faded counter */
+    font-size: 18vw;
+  }
+
+  /* the downbeat rises on the axis instead of sliding in from the sides */
+  .js .moment:not(.is-in) .w-sushi,
+  .js .moment:not(.is-in) .w-drinks {
+    transform: translateY(0.18em);
   }
 }

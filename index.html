@@ -19,20 +19,66 @@
       data-i18n-attr="content:meta.description"
       content="ALTTO Lisboa. Rodízio de sushi na Rua da Escola de Medicina Veterinária 3. Almoço 12:00–15:00, jantar 19:00–23:00, todos os dias."
     />
+    <!-- Social previews need absolute URLs. https://altto-lisboa.example is a placeholder:
+         replace it (here and in the JSON-LD below) with the production domain before launch. -->
+    <meta property="og:image" content="https://altto-lisboa.example/assets/social/altto-og.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      data-i18n-attr="content:meta.ogImageAlt"
+      content="Sushi e uma bebida em tabuleiros de madeira, numa mesa escura do ALTTO."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://altto-lisboa.example/assets/social/altto-og.jpg" />
+    <meta
+      name="twitter:image:alt"
+      data-i18n-attr="content:meta.ogImageAlt"
+      content="Sushi e uma bebida em tabuleiros de madeira, numa mesa escura do ALTTO."
+    />
     <meta name="theme-color" content="#110d0a" />
+    <!-- No favicon yet: the official logo file is not in the project and must not be redrawn.
+         The empty icon only stops the browser requesting /favicon.ico. Replace once ALTTO supplies the logo. -->
+    <link rel="icon" href="data:," />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "ALTTO Lisboa",
+        "url": "https://altto-lisboa.example/",
+        "image": "https://altto-lisboa.example/assets/social/altto-og.jpg",
+        "telephone": "+351912398756",
+        "servesCuisine": "Sushi",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua da Escola de Medicina Veterinária 3",
+          "postalCode": "1000-127",
+          "addressLocality": "Lisboa",
+          "addressCountry": "PT"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "12:00",
+            "closes": "15:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "19:00",
+            "closes": "23:00"
+          }
+        ],
+        "sameAs": ["https://www.instagram.com/altto.lisboa/"]
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..600&family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="preload"
-      as="image"
-      type="image/webp"
-      href="assets/altto-official/web/altto-hero-sushi-drink-941.webp"
-      imagesrcset="assets/altto-official/web/altto-hero-sushi-drink-640.webp 640w, assets/altto-official/web/altto-hero-sushi-drink-941.webp 941w"
-      imagesizes="(max-width: 860px) 100vw, 36vw"
     />
     <link rel="stylesheet" href="css/tokens.css" />
     <link rel="stylesheet" href="css/base.css" />
@@ -61,9 +107,10 @@
           <li class="rail-optional"><a href="#experiencia" data-i18n="nav.experience">Experiência</a></li>
           <li><a href="#precos" data-i18n="nav.prices">Preços</a></li>
           <li>
+            <!-- the full label is the accessible name at every width; the short form is visual only -->
             <a href="#visitar"
               ><span class="rail-long" data-i18n="nav.location">Localização</span
-              ><span class="rail-short" data-i18n="nav.locationShort">Local</span></a
+              ><span class="rail-short" aria-hidden="true" data-i18n="nav.locationShort">Local</span></a
             >
           </li>
           <li class="rail-ig">
@@ -94,7 +141,6 @@
           alt="Seleção de sushi e bebida numa mesa escura do ALTTO."
           data-i18n-attr="alt:alt.hero"
           fetchpriority="high"
-          decoding="async"
         />
       </figure>
 
@@ -111,7 +157,15 @@
         </h1>
         <p class="hero-sub" data-i18n="hero.sub">Rodízio de sushi em Lisboa, ao almoço e ao jantar.</p>
         <p class="hero-actions">
-          <a class="link link--accent" href="#precos"><span data-i18n="cta.prices">Ver preços</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a
+            class="link link--accent hero-reserve"
+            href="https://wa.me/351912398756?text=Ol%C3%A1%21%20Gostaria%20de%20reservar%20uma%20mesa%20no%20ALTTO%20Lisboa."
+            data-i18n-attr="href:cta.whatsappHref"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span data-i18n="cta.whatsapp">Reservar por WhatsApp</span><span class="arrow" aria-hidden="true">↗</span></a
+          >
+          <a class="link" href="#precos"><span data-i18n="cta.prices">Ver preços</span><span class="arrow" aria-hidden="true">→</span></a>
           <a
             class="link"
             href="https://www.google.com/maps/dir/?api=1&amp;destination=Rua+da+Escola+de+Medicina+Veterin%C3%A1ria+3%2C+1000-127+Lisboa"
@@ -224,10 +278,7 @@
       <section class="atmosphere" aria-labelledby="ambiente-titulo">
         <header class="atmosphere-head" data-reveal>
           <p class="atmosphere-label" data-i18n="atmo.label">Atmosfera</p>
-          <h2 class="atmosphere-title" id="ambiente-titulo" data-i18n-html="atmo.title">
-            Como se vive<br />
-            o ALTTO.
-          </h2>
+          <h2 class="atmosphere-title" id="ambiente-titulo" data-i18n-html="atmo.title">Como se vive <br />o ALTTO.</h2>
         </header>
 
         <figure class="shot shot--platter" data-reveal="image">
@@ -313,10 +364,13 @@
                 <rect class="stars-fill" width="94" height="18" clip-path="url(#stars-clip)" />
               </svg>
             </span>
-            <p class="rating-source" data-i18n="rating.source">Google · 197 avaliações</p>
+            <!-- summary kept as "more than 190" so it stays true as reviews come in; copy lives in js/i18n.js -->
+            <p class="rating-source" data-i18n="rating.source">Google · mais de 190 avaliações</p>
           </div>
 
-          <!-- counts as shown on the Google listing, 24 Sep 2026 — update before launch -->
+          <!-- Hardcoded review data: 4,7 and these counts (total 197) as shown on the Google listing,
+               24 Sep 2026. Verify periodically against the Google listing and update rating, counts,
+               --share (count ÷ total) and the star fill together. -->
           <dl class="rating-dist" aria-label="Distribuição das avaliações" data-i18n-attr="aria-label:rating.dist">
             <div style="--share: 0.858"><dt>5</dt><dd><span class="bar" aria-hidden="true"></span>169</dd></div>
             <div style="--share: 0.071"><dt>4</dt><dd><span class="bar" aria-hidden="true"></span>14</dd></div>
@@ -422,6 +476,9 @@
         >@altto.lisboa</a
       >
       <p class="footer-line footer-copy">© 2026 ALTTO&nbsp;Lisboa</p>
+      <a class="footer-legal" href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener noreferrer"
+        ><span data-i18n="footer.complaints">Livro de Reclamações</span><span class="arrow" aria-hidden="true">↗</span></a
+      >
     </footer>
     <script src="js/i18n.js"></script>
   </body>

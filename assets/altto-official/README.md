@@ -15,3 +15,7 @@ Source images (PNG) supplied by ALTTO. Do not overwrite or re-grade them.
 | altto-salmon-chopsticks.png | Atmosphere — compact frame |
 | altto-salmon-tacos.png | Atmosphere — offset frame |
 | altto-gunkan.png | Not used on the landing page; kept for menu / dish feature / future pages |
+
+`../social/altto-og.jpg` is the social preview (Open Graph / X): a plain 941×494 crop of
+`altto-hero-sushi-drink.png` (from y = 540, lower glass + sushi board), resized to 1200×630,
+JPEG quality 86. No retouching, text or logo.
